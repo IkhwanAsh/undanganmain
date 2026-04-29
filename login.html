@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+ margin:0;
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ overflow:hidden;
+ font-family:Arial;
+ background:#111;
+}
+
+/* BACKGROUND CONTAINER */
+.bg-fashion{
+ position:fixed;
+ width:100%;
+ height:100%;
+ overflow:hidden;
+ z-index:-1;
+}
+
+/* GAMBAR MELAYANG */
+.bg-fashion img{
+ position:absolute;
+ width:120px;
+ opacity:0.15;
+ animation: float 10s linear infinite;
+}
+
+/* POSISI RANDOM */
+.bg-fashion img:nth-child(1){left:10%; animation-duration:12s;}
+.bg-fashion img:nth-child(2){left:30%; animation-duration:15s;}
+.bg-fashion img:nth-child(3){left:50%; animation-duration:10s;}
+.bg-fashion img:nth-child(4){left:70%; animation-duration:18s;}
+.bg-fashion img:nth-child(5){left:85%; animation-duration:14s;}
+
+/* ANIMASI NAIK */
+@keyframes float{
+ from{
+  transform:translateY(100vh) rotate(0deg);
+ }
+ to{
+  transform:translateY(-120vh) rotate(360deg);
+ }
+}
+
+/* LOGIN BOX */
+.login-box{
+ background: rgba(255,255,255,0.95);
+ padding:30px;
+ border-radius:15px;
+ width:320px;
+ text-align:center;
+ box-shadow:0 10px 30px rgba(0,0,0,0.3);
+ backdrop-filter: blur(5px);
+}
+
+/* INPUT */
+input{
+ width:100%;
+ padding:10px;
+ margin:10px 0;
+ border-radius:8px;
+ border:1px solid #ddd;
+}
+
+/* BUTTON */
+button{
+ width:100%;
+ padding:12px;
+ border:none;
+ border-radius:10px;
+ background:#ff4d6d;
+ color:white;
+ font-size:16px;
+ transition:0.3s;
+}
+
+button:hover{
+ background:#e8435c;
+ transform:scale(1.05);
+}
+
+a{
+ color:#ff4d6d;
+ text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<!-- BACKGROUND BAJU -->
+<div class="bg-fashion">
+  <img src="baju1.jpg">
+  <img src="blouse.jpg">
+  <img src="sweater premium.jpg">
+  <img src="rok wanita.jpg">
+  <img src="baju5.jpg">
+</div>
+
+<!-- LOGIN -->
+<div class="login-box">
+  <h3>Member Three If</h3>
+
+  <input id="loginHp" placeholder="Nomor HP">
+  <input id="loginPass" type="password" placeholder="Password">
+
+  <button onclick="login()">Masuk</button>
+
+  <p class="mt-3">
+    Belum punya akun? <a href="register.html">Daftar</a>
+  </p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
